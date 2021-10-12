@@ -1,19 +1,24 @@
 ﻿table {
-  border-spacing: 0px;
-  border-collapse: collapse;
+  /* border-spacing: 0px; */
+  /* border-collapse: collapse; */
+  border-spacing: 0px 8px;
+  border: 1px solid red;
+  width: 100%;
 }
+
 
 table > thead {
 
-  margin: 0px;
-  padding: 0px;
+  /* margin: 0px;
+  padding: 0px; */
 }
 
-table > thead::after {
+
+/* table > thead::after {
   margin-bottom: 8px;
   content: '';
   display: block;
-}
+} */
 
 table > thead > tr {
   /* padding: 0px 16px; */
