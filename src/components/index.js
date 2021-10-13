@@ -3,6 +3,7 @@ import TableHead from './table-head';
 import TableBody from './table-body';
 import TableRow from './table-row';
 import TableCell from './table-cell';
+import { MdVideocam, MdRemoveFromQueue,  MdSubtitles} from 'react-icons/md';
 
 const App = () => {
   const headers = ['Тип', 'Название', 'Статус'];
@@ -34,7 +35,7 @@ const App = () => {
   ];
 
   return (
-    <div style={{background: 'rgb(246 246 246)', padding: '30px'}}>
+    <div style={{background: '#EFF1F5', padding: '30px'}}>
       <Table>
         <TableHead>
           <TableRow>
@@ -55,7 +56,7 @@ const App = () => {
             items.map(({id, type, title, status}) => {
               return (
                 <TableRow key={id}>
-                  <TableCell>
+                  <TableCell icon={<MdVideocam />}>
                     {type}
                   </TableCell>
                   <TableCell>
@@ -64,7 +65,8 @@ const App = () => {
                   <TableCell>
                     {status}
                   </TableCell>
-                  <TableCell>
+                  <TableCell icon={<MdSubtitles />} alignIcon="right">
+                    <button>Записаться</button>
                   </TableCell>
                 </TableRow>
               );

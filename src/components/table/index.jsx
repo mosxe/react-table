@@ -2,7 +2,7 @@
 
 const Table = ({children}) => {
   return (
-    <table>
+    <table className="table-clever">
       {children}
     </table>   
   )
