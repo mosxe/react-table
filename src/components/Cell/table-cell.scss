@@ -1,0 +1,24 @@
+﻿.icon {
+    display: inline-block;
+    vertical-align: middle;
+
+    &--left {
+      margin: 0px 4px 0px 0px;
+    }
+
+    &--right {
+      margin: 0px 0px 0px 4px;
+    }
+  }
+
+.text--left {
+  text-align: left;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.text--center {
+  text-align: center;
+}

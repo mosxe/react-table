@@ -1,8 +1,4 @@
-﻿import Table from './table';
-import TableHead from './table-head';
-import TableBody from './table-body';
-import TableRow from './table-row';
-import TableCell from './table-cell';
+﻿import Table from './Table';
 import { MdVideocam, MdRemoveFromQueue,  MdSubtitles} from 'react-icons/md';
 
 const App = () => {
@@ -37,42 +33,42 @@ const App = () => {
   return (
     <div style={{background: '#EFF1F5', padding: '30px'}}>
       <Table>
-        <TableHead>
-          <TableRow>
+        <Table.Head>
+          <Table.Row>
             {
               headers.map(header => {
                 return (
-                  <TableCell key={header} component="th">
+                  <Table.Cell key={header} type="th">
                     {header}
-                  </TableCell>
+                  </Table.Cell>
                 );
               })
             }
-            <TableCell key={'Действия'} component="th" />
-          </TableRow>
-        </TableHead>
-        <TableBody>
+            <Table.Cell key={'Действия'} type="th" />
+          </Table.Row>
+        </Table.Head>
+        <Table.Body>
           {
             items.map(({id, type, title, status}) => {
               return (
-                <TableRow key={id}>
-                  <TableCell icon={<MdVideocam />}>
+                <Table.Row key={id}>
+                  <Table.Cell icon={<MdVideocam />} alignIcon="right" alignText="left">
                     {type}
-                  </TableCell>
-                  <TableCell>
+                  </Table.Cell>
+                  <Table.Cell>
                     {title}
-                  </TableCell>
-                  <TableCell>
+                  </Table.Cell>
+                  <Table.Cell alignText="center">
                     {status}
-                  </TableCell>
-                  <TableCell icon={<MdSubtitles />} alignIcon="right">
+                  </Table.Cell>
+                  <Table.Cell icon={<MdSubtitles />} alignIcon="right" alignText="right">
                     <button>Записаться</button>
-                  </TableCell>
-                </TableRow>
+                  </Table.Cell>
+                </Table.Row>
               );
             })
           }
-        </TableBody>
+        </Table.Body>
       </Table>
     </div>
   );
