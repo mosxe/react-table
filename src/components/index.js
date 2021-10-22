@@ -44,7 +44,7 @@ const App = () => {
                 );
               })
             }
-            <Table.Cell key={'Действия'} type="th" />
+            <Table.Cell key={'Действия'} type="th" width="120px"/>
           </Table.Row>
         </Table.Head>
         <Table.Body>
@@ -52,16 +52,16 @@ const App = () => {
             items.map(({id, type, title, status}) => {
               return (
                 <Table.Row key={id}>
-                  <Table.Cell icon={<MdVideocam />} alignIcon="right" alignText="left">
+                  <Table.Cell icon={<MdVideocam />} alignIcon="right" alignText="left" colorText="ghost">
                     {type}
                   </Table.Cell>
-                  <Table.Cell>
+                  <Table.Cell colorText="ghost">
                     {title}
                   </Table.Cell>
                   <Table.Cell alignText="center">
                     {status}
                   </Table.Cell>
-                  <Table.Cell icon={<MdSubtitles />} alignIcon="right" alignText="right">
+                  <Table.Cell icon={<MdSubtitles />} alignIcon="right" alignText="right" colorText="ghost">
                     <button>Записаться</button>
                   </Table.Cell>
                 </Table.Row>

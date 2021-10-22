@@ -28,18 +28,22 @@ const TableCell = (props) => {
     icon = null,
     alignText = 'left',
     alignIcon = 'left',
+    colorText = null,
+    width = null,
     ...attrs } = props;
 
   const textClasses = classNames({'text--left': alignText === 'left', 'text--right': alignText === 'right',
     'text--center' : alignText === 'center'});
 
+  const textColors = classNames({'text--ghost': colorText === 'ghost'});
+  
   return (
     type === 'td' ? 
-      <td className={textClasses}>
+      <td className={`${textClasses} ${textColors}`}>
         {icon && tdContent(icon, alignIcon, children) || children}       
       </td> 
         : 
-      <th className={textClasses}>
+      <th className={`${textClasses} ${textColors}`} style={{width: width}}>
         {children}
       </th>
   );
