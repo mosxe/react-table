@@ -1,34 +1,9 @@
 ﻿import Table from './Table';
 import { MdVideocam, MdRemoveFromQueue,  MdSubtitles} from 'react-icons/md';
+import TableArray  from './dataContext/LearnTableContext.ts';
 
 const App = () => {
   const headers = ['Тип', 'Название', 'Статус'];
-  const items = [
-    {
-      id: 1,
-      title: 'Видеоролик',
-      type: 'video',
-      status: 'plan'
-    },
-    {
-      id: 2,
-      title: 'Видеоролик',
-      type: 'video2',
-      status: 'active'
-    },
-    {
-      id: 3,
-      title: 'Курс',
-      type: 'course',
-      status: 'passed'
-    },
-    {
-      id: 4,
-      title: 'Тест',
-      type: 'test',
-      status: 'cancel'
-    },
-  ];
 
   return (
     <div style={{background: '#EFF1F5', padding: '30px'}}>
@@ -49,14 +24,14 @@ const App = () => {
         </Table.Head>
         <Table.Body>
           {
-            items.map(({id, type, title, status}) => {
+            TableArray.map(({id, type, name, status}) => {
               return (
                 <Table.Row key={id}>
                   <Table.Cell icon={<MdVideocam />} alignIcon="right" alignText="left" colorText="ghost">
                     {type}
                   </Table.Cell>
                   <Table.Cell colorText="ghost">
-                    {title}
+                    {name}
                   </Table.Cell>
                   <Table.Cell alignText="center">
                     {status}

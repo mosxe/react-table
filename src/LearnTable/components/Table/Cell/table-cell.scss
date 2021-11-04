@@ -1,17 +1,4 @@
-﻿.icon {
-    display: inline-block;
-    vertical-align: middle;
-
-    &--left {
-      margin: 0px 4px 0px 0px;
-    }
-
-    &--right {
-      margin: 0px 0px 0px 4px;
-    }
-  }
-
-.text--left {
+﻿.text--left {
   text-align: left;
 }
 
@@ -21,6 +8,10 @@
 
 .text--center {
   text-align: center;
+}
+
+.text--color-default {
+  color: #3B4047;
 }
 
 .text--ghost {

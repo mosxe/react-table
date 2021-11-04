@@ -7,9 +7,8 @@ const TableCell = (props) => {
     children,
     type = 'td',
     alignText = 'left',
-    colorText,
-    width,
-    ...attrs } = props;
+    colorText = 'color-default',
+    width = null } = props;
 
   const TD = ({ customStyle }) => {
     return (
@@ -19,7 +18,7 @@ const TableCell = (props) => {
     )
   };
 
-  const TH = ({ customStyle }) => {
+  const TH = ({ customStyle, width }) => {
     return (
       <th className={customStyle} style={{ width: width }}>
         {children}
@@ -30,15 +29,15 @@ const TableCell = (props) => {
   const textClasses = classNames({'text--left': alignText === 'left', 'text--right': alignText === 'right',
     'text--center' : alignText === 'center'});
 
-  const textColors = classNames({'text--ghost': colorText === 'ghost'});
-  
+  const textColors = classNames({'text--color-default': colorText === 'color-default', 'text--ghost': colorText === 'ghost'});
+ 
   return (
     type === 'td' ?
       <TD customStyle={`${textClasses} ${textColors}`}>
         {children}
       </TD>
       :
-      <TH customStyle={`${textClasses} ${textColors}`} style={{ width: width }}>
+      <TH customStyle={`${textClasses} ${textColors}`} width={width}>
         {children}
       </TH>
   );

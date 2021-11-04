@@ -1,11 +1,11 @@
-﻿
-export namespace LearnTableDTO {
+﻿export namespace LearnTableDTO {
   export interface ITableItem {
       id: number;
       clever: number;
       name: string;
       state: number;
       type: string;
+      status: string;
       url: string;
   };
 
