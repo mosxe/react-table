@@ -10,7 +10,7 @@ const TableCell = (props) => {
     colorText = 'color-default',
     width = null } = props;
 
-  const TD = ({ customStyle }) => {
+  const TD = ({children, customStyle }) => {
     return (
       <td className={customStyle}>
         {children}
@@ -18,7 +18,7 @@ const TableCell = (props) => {
     )
   };
 
-  const TH = ({ customStyle, width }) => {
+  const TH = ({children, customStyle, width }) => {
     return (
       <th className={customStyle} style={{ width: width }}>
         {children}
